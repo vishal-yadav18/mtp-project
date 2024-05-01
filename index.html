@@ -1,0 +1,275 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+        <title>Wheat Elite</title>
+
+        <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/welogo.jpeg"/>
+       		
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="assets/css/style.css">
+
+		<!-- main JavaScript -->
+		<script type="text/javascript" src="index.js"></script>
+    </head>
+	
+	<body>
+		<section class="top-area">
+			<div class="header-area">
+			    <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+
+			        <div class="container">
+
+			            <div class="navbar-header">
+			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+			                    <i class="fa fa-bars"></i>
+			                </button>
+			                <a class="navbar-brand" href="index.html">Wheat<span>Elite</span></a>
+
+			            </div>
+
+			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+			                    <li class=" scroll active"><a href="#home">Home</a></li>
+			                    <li class="scroll"><a href="#works">How It Works</a></li>
+			                    <li class="scroll"><a href="#explore">Explore</a></li>
+			                </ul>
+			            </div>
+			        </div>
+			    </nav>
+			</div>
+
+		</section>
+
+		<!--welcome-hero start -->
+		<section id="home" class="welcome-hero">
+			<div class="container">
+				<div class="welcome-hero-txt">
+					<h2>Multi-Trait Genomic Prediction</h2>
+					<p>
+						Start the Prediction
+					</p>
+				</div>
+				<div class="welcome-hero-serch-box">
+					<div class="welcome-hero-form">
+						<div class="single-welcome-hero-form">
+							<h3>Enter the sequence!</h3>
+							<form action="index.html">
+								<input id="genotypeInput" type="sequenceInput" placeholder="Ex: ACGTAACTTGG...." onkeydown="handleKeyPress(event)"/>
+							</form>
+						</div>
+					</div>
+
+					<div class="welcome-hero-serch">
+						<button class="welcome-hero-btn" onclick="handleButtonClick()">
+							<script>
+								function handleButtonClick() {
+									if (document.getElementById("genotypeInput").value.length === 0) {
+										document.getElementById('message').textContent = "Please Enter the Sequence";
+										return;
+									}
+
+                					const isAlert = submitGenotype();
+                					if ((!isAlert && document.getElementById("genotypeInput").value.length === 48)) {
+                    					scrollDown();
+										document.getElementById('message').textContent = "";
+										return;
+                					}
+            					}
+
+								function scrollDown() {
+									window.scroll({
+										top: window.scrollY + 450,
+										behavior: 'smooth'
+									});
+								}
+
+								function handleKeyPress(event) {
+									if (event.key === 'Enter') {
+										event.preventDefault();
+										handleButtonClick();
+										handleButtonClick();
+									}
+								}
+
+							</script>												
+							 Find
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="invalid-sequence">
+				<p id="message"></p>
+			</div>
+		</section>
+
+		<section class="list-topics">			
+			<div class="container" id="list-topics">
+				<div class="list-topics-content">
+					<ul>
+						<li>
+
+							<div class="single-list-topics-content" id="content-1">
+								<div class="single-list-topics-icon">
+									<img src="/assets/flaticons/DH-removebg-preview.png" alt="DH" height="75px" width="75px">
+								</div>
+								<h2>Days to Heading <br> (DH)</h2>
+								<p id="t1">--</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content" id="content-2">
+								<div class="single-list-topics-icon">
+									<img src="/assets/flaticons/GFD-removebg-preview.png" alt="DH" height="75px" width="75px">
+								</div>
+								<h2>Grain Filling Duration <br> (GFD)</h2>
+								<p id="t2">--</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content" id="content-3">
+								<div class="single-list-topics-icon">
+									<img src="/assets/flaticons/GNPS-removebg-preview.png" alt="GNPS" height="75px" width="75px">
+								</div>
+								<h2>Grain Number Per Spike <br> (GNPS)</h2>
+								<p id="t3">--</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content" id="content-4">
+								<div class="single-list-topics-icon">
+									<img src="/assets/flaticons/GWPS-removebg-preview.png" alt="DH" height="75px" width="75px">
+								</div>
+								<h2>Grain Weight Per Spike <br> (GWPS)</h2>
+								<p id="t4">--</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content" id="content-5">
+								<div class="single-list-topics-icon">
+									<img src="/assets/flaticons/PH-removebg-preview.png" alt="DH" height="75px" width="75px">
+								</div>
+								<h2>Plant Height <br> (PH)</h2>
+								<p id="t5">--</p>
+							</div>
+						</li>
+						<li>
+							<div class="single-list-topics-content" id="content-6">
+								<div class="single-list-topics-icon">
+									<img src="/assets/flaticons/GY-removebg-preview.png" alt="DH" height="75px" width="75px">
+								</div>
+								<h2>Grain Yield <br> (GY)</h2>
+								<p id="t6">--</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- How it works -->
+		<div class="works">
+			<div class="container" id="works">
+				<div class="section-header">
+					<h2>how it works</h2>
+					<p>Learn More about project</p>
+				</div>
+				<div class="works-content">
+					<p>The project, titled <b>Genomic Prediction for End-Use Quality Traits in Wheat"</b> focuses on developing predictive models for wheat end-use quality traits using a diverse set of approaches. Leveraging genotypic data represented by Single Nucleotide Polymorphisms (SNPs) and corresponding phenotypic information for six traits, the study employs Random Forests (RF), and Multilayer Perceptron (MLP) neural networks. The dataset undergoes quality control and imputation, ensuring robustness in subsequent analyses. SNP data is encoded, and feature selection is implemented, especially in RF.<br><br> The project culminates in a user-friendly feature where the trained models predict trait values based on user-input SNP sequences, offering a holistic and integrative approach to wheat genomic prediction for enhanced breeding strategies.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- explore -->
+		<section id="explore" class="explore">
+			<div class="container">
+				<div class="section-header">
+					<h2>explore</h2>
+					<p>Find out what each trait means</p>
+				</div>
+
+				<div class="explore-content">
+					<div class="single-explore-item">
+						<div class="single-explore-txt"  id="trait1">
+							<h2>Days to Heading (DH)</h2>
+							<p>Days to heading is the duration from planting to the appearance of the wheat heads or flowering. It typically ranges from 60 to 120 days, depending on the variety and growing conditions.</p>
+						</div>
+					</div>
+			
+					<div class="single-explore-item">
+						<div class="single-explore-txt"  id="trait2">
+							<h2>Grain Filling Duration</h2>
+							<p>Grain filling duration is the period between flowering and grain maturity. It lasts around 20 to 40 days, during which grains develop and accumulate starch.</p>
+						</div>
+					</div>
+
+					<div class="single-explore-item">
+						<div class="single-explore-txt" id="trait3">
+							<h2>Grain Number Per Spike</h2>
+							<p>This trait refers to the quantity of grains on each wheat spike. Varieties may have different capacities, impacting overall yield potential.</p>	
+						</div>
+					</div>
+
+					<div class="single-explore-item">
+						<div class="single-explore-txt" id="trait4">
+							<h2>Grain Weight Per Spike</h2>
+							<p>Grain weight per spike is the average weight of individual grains on a wheat spike. It influences the overall yield and quality of the harvest.</p>
+						</div>
+					</div>
+
+					<div class="single-explore-item">
+						<div class="single-explore-txt" id="trait5">
+							<h2>Plant Height</h2>
+							<p>Plant height is the vertical measurement from the base to the tip of the wheat plant. Varieties vary in height, affecting factors such as lodging resistance and ease of harvesting.</p>
+						</div>
+					</div>
+
+					<div class="single-explore-item">
+						<div class="single-explore-txt" id="trait6">
+							<h2>Grain Yield</h2>
+							<p>Grain yield is the total amount of wheat harvested per unit area. It depends on a combination of the aforementioned traits and is a crucial factor in assessing the productivity of a wheat variety.</p>
+						</div>
+					</div>			
+				</div>
+		</section>
+
+		<!--footer-->
+		<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="footer-menu">
+		           	<div class="row">
+			           	<div class="col-sm-3">
+			           		 <div class="navbar-header">
+				                <a class="navbar-brand" href="index.html">Wheat<span>Elite</span></a>
+				            </div>
+			           	</div>
+		           </div>
+				</div>
+				<div class="hm-footer-copyright">
+					<div class="row">
+						<div class="col-sm-5">
+							<p>
+								&copy;copyright. designed and developed by Vishal Yadav</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+        </footer>
+    </body>
+</html>
